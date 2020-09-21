@@ -41,6 +41,7 @@ def main():
         # Use PrettyPrinter to format output
         pp = pprint.PrettyPrinter(indent=4)
         pp.pprint(my_ranked_stats)
+        
     else:
         print("Error. entered invalid number. Please try again! :)")
 

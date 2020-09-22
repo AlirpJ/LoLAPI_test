@@ -10,8 +10,8 @@ import pprint
 def outputGen(my_region="na1",username="Kiidlat",apiKey=1):
     watcher = LolWatcher(apiKey)
 
-    me = watcher.summoner.by_name(my_region, username)
-
+    me = watcher.summoner.by_name(my_region, username) # JSON object containing a LOT of data
+    # the 'id' key is what holds your summoner ID
     my_ranked_stats = watcher.league.by_summoner(my_region, me['id']) # Returns JSON object output
     return my_ranked_stats
 
@@ -41,6 +41,16 @@ def main():
         # Use PrettyPrinter to format output
         pp = pprint.PrettyPrinter(indent=4)
         pp.pprint(my_ranked_stats)
+
+        #print("Last game info: ")
+        #watcher = LolWatcher(apiKey)
+        #me = watcher.summoner.by_name(my_region, username)
+        #my_matches = watcher.match.matchlist_by_account(my_region, me['accountId'])
+        #lastMatch = my_matches['matches'][0]
+        #match_detail = watcher.match.by_id(my_region, lastMatch['gameId'])
+        # Very long output!!
+        #pp.pprint(match_detail)
+
         
     else:
         print("Error. entered invalid number. Please try again! :)")

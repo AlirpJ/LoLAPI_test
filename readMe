@@ -1,0 +1,11 @@
+toDo:
+
+1. https://github.com/pseudonym117/Riot-Watcher/blob/master/src/riotwatcher/_apis/league_of_legends/ChampionMasteryApiV4.py
+    Use scores.by.summoner to find a player's total champion ChampionMasteryApiV4
+    
+2. Find way to find all champion mastery level 5+ (loop through champion mastery and use 'if' statement to find 5+ levels, perhaps)
+    Count the number of champion masteries over level 5
+
+3. Divide  total champion mastery by number of champion masteries over 5
+
+4. Return 3 output: this number roughly represents how much a player can 'flex pick'

@@ -15,7 +15,7 @@ def outputGen(my_region="na1",username="Kiidlat",apiKey=1):
     my_ranked_stats = watcher.league.by_summoner(my_region, me['id']) # Returns JSON object output
     return my_ranked_stats
 
-# Main asks for user input, then calls on outputGen, then prints output
+# Main asks for user input, then calls on outputGen (or searches for champions list in your region), then prints output
 def main():
     
     x = 0
@@ -51,9 +51,9 @@ def main():
         # Very long output!!
         #pp.pprint(match_detail)
 
-        
     else:
         print("Error. entered invalid number. Please try again! :)")
+
 
 # Returns output containing information for all champions
 # (Warning: long output!)

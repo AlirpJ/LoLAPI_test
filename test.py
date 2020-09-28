@@ -46,8 +46,12 @@ def matchHistory(my_region="na1",username="Kiidlat",apiKey=1):
 def main():
     
     x = 0
-    x = int((input("Type '0' to find your ranked stats, or '1' for champion data, or '2' for champion mastery," 
-    +"or '3' for last match details!")))
+    print("Hello! Pick one option: ")
+    print("Type '0' to find your ranked stats ")
+    print("Type '1' for champion data ")
+    print("Type '2' for champion mastery ")
+    print("Type '3' for last match details ")
+    x = int((input("Enter your option here: ")))
 
     if(x==0): # Print ranked stats
         my_region = (str)(input("Type in your region (NA is 'na1'): "))

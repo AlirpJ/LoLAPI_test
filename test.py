@@ -10,58 +10,68 @@ import pprint
 
 # Main asks for user input, then calls on other functions to prints output
 def main():
-    
+    running = True
     x = 0
     print("Hello! Pick one option: ")
     print("Type '0' to find your ranked stats ")
     print("Type '1' for champion data ")
     print("Type '2' for champion mastery ")
     print("Type '3' for last match details ")
-    x = int((input("Enter your option here: ")))
+    print("Type '4' to end program.")
 
-    if(x==0): # Print ranked stats
-        my_region = (str)(input("Type in your region (NA is 'na1'): "))
-        username = (str)(input("Type in your username (no spaces): "))
-        apiKey = (str) (input("API Key: "))
+    while(running):
 
-        my_ranked_stats = outputGen(my_region,username,apiKey)
-        # Use PrettyPrinter to format output
-        pp = pprint.PrettyPrinter(indent=4)
-        pp.pprint(my_ranked_stats)
+        x = int((input("Enter your option here: ")))
 
-    elif(x==1): # Print champion data
-        my_region = (str)(input("Type in your region (NA is 'na1'): "))
-        apiKey = (str) (input("API Key: "))
+        if(x==0): # Print ranked stats
+            my_region = (str)(input("Type in your region (NA is 'na1'): "))
+            username = (str)(input("Type in your username (no spaces): "))
+            apiKey = (str) (input("API Key: "))
 
-        output = champions(my_region,apiKey)
+            my_ranked_stats = outputGen(my_region,username,apiKey)
+            # Use PrettyPrinter to format output
+            pp = pprint.PrettyPrinter(indent=4)
+            pp.pprint(my_ranked_stats)
 
-        # Use PrettyPrinter to format output
-        pp = pprint.PrettyPrinter(indent=4)
-        # Champion output not clean
-        pp.pprint(output)
+        elif(x==1): # Print champion data
+            my_region = (str)(input("Type in your region (NA is 'na1'): "))
+            apiKey = (str) (input("API Key: "))
 
-    elif(x==2): # Print flexScore
-        my_region = (str)(input("Type in your region (NA is 'na1'): "))
-        username = (str)(input("Type in your username (no spaces): "))
-        apiKey = (str) (input("API Key: "))    
-        output = flexGen(my_region, username, apiKey)
-        pp = pprint.PrettyPrinter(indent=4)
-        pp.pprint(output)
+            output = champions(my_region,apiKey)
+
+            # Use PrettyPrinter to format output
+            pp = pprint.PrettyPrinter(indent=4)
+            # Champion output not clean
+            pp.pprint(output)
+
+        elif(x==2): # Print flexScore
+            my_region = (str)(input("Type in your region (NA is 'na1'): "))
+            username = (str)(input("Type in your username (no spaces): "))
+            apiKey = (str) (input("API Key: "))    
+            output = flexGen(my_region, username, apiKey)
+            pp = pprint.PrettyPrinter(indent=4)
+            print("FlexScore: ")
+            pp.pprint(output)
 
 
-    elif(x==3): # Print last match details
-        my_region = (str)(input("Type in your region (NA is 'na1'): "))
-        username = (str)(input("Type in your username (no space): "))
-        apiKey = (str) (input("API Key: "))
-        print("Last game info: ")
-        match_detail = matchHistory(my_region,username,apiKey)
+        elif(x==3): # Print last match details
+            my_region = (str)(input("Type in your region (NA is 'na1'): "))
+            username = (str)(input("Type in your username (no space): "))
+            apiKey = (str) (input("API Key: "))
+            print("Last game info: ")
+            match_detail = matchHistory(my_region,username,apiKey)
 
-        # (Warning: long output!)
-        pp = pprint.PrettyPrinter(indent=4)
-        pp.pprint(match_detail)
+            # (Warning: long output!)
+            pp = pprint.PrettyPrinter(indent=4)
+            pp.pprint(match_detail)
 
-    else:
-        print("Error. entered invalid number. Please try again! :)")
+        elif(x==4): # End program
+            print("Thank you! Have a great day :)")
+            running = False
+            break;
+
+        else:
+            print("Error. entered invalid number. Please try again! :)")
 
 
 # Setup and output generation

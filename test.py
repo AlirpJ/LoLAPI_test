@@ -71,7 +71,7 @@ def main():
             break;
 
         else:
-            print("Error. entered invalid number. Please try again! :)")
+            print("Error. entered invalid number. Please try again!")
 
 
 # Setup and output generation

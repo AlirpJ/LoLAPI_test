@@ -12,14 +12,16 @@ import pprint
 def main():
     running = True
     x = 0
-    print("Hello! Pick one option: ")
-    print("Type '0' to find your ranked stats ")
-    print("Type '1' for champion data ")
-    print("Type '2' for champion mastery ")
-    print("Type '3' for last match details ")
-    print("Type '4' to end program.")
+
 
     while(running):
+        print("Hello! Pick one option: ")
+        print("Type '0' to find your ranked stats ")
+        print("Type '1' for champion data ")
+        print("Type '2' for champion mastery ")
+        print("Type '3' for last match details ")
+        print("Type '4' to end program.")
+
 
         x = int((input("Enter your option here: ")))
 
@@ -69,6 +71,9 @@ def main():
             print("Thank you! Have a great day :)")
             running = False
             break;
+
+        #elif(x==-1): # TEST
+        #    pass
 
         else:
             print("Error. entered invalid number. Please try again!")

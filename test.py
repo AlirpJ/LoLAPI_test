@@ -13,6 +13,9 @@ def main():
     running = True
     x = 0
 
+    print("Hello! Please type your API Key below: ")
+    apiKey = (str) (input("API Key: "))
+    watcher = LolWatcher(apiKey)
 
     while(running):
         print("Hello! Pick one option: ")
@@ -28,7 +31,7 @@ def main():
         if(x==0): # Print ranked stats
             my_region = (str)(input("Type in your region (NA is 'na1'): "))
             username = (str)(input("Type in your username (no spaces): "))
-            apiKey = (str) (input("API Key: "))
+
 
             my_ranked_stats = outputGen(my_region,username,apiKey)
             # Use PrettyPrinter to format output
@@ -37,7 +40,7 @@ def main():
 
         elif(x==1): # Print champion data
             my_region = (str)(input("Type in your region (NA is 'na1'): "))
-            apiKey = (str) (input("API Key: "))
+
 
             output = champions(my_region,apiKey)
 
@@ -49,7 +52,7 @@ def main():
         elif(x==2): # Print flexScore
             my_region = (str)(input("Type in your region (NA is 'na1'): "))
             username = (str)(input("Type in your username (no spaces): "))
-            apiKey = (str) (input("API Key: "))    
+  
             output = flexGen(my_region, username, apiKey)
             pp = pprint.PrettyPrinter(indent=4)
             print("FlexScore: ")
@@ -59,7 +62,6 @@ def main():
         elif(x==3): # Print last match details
             my_region = (str)(input("Type in your region (NA is 'na1'): "))
             username = (str)(input("Type in your username (no space): "))
-            apiKey = (str) (input("API Key: "))
             print("Last game info: ")
             match_detail = matchHistory(my_region,username,apiKey)
 

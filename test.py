@@ -81,6 +81,7 @@ def main():
         elif(x==0): # TEST
             print("This is an Easter egg! Not too exciting, though...")
             print("Enter another number.")
+            
         elif(x==-1): # TEST
             pass
         

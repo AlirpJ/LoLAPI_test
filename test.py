@@ -1,9 +1,13 @@
 from riotwatcher import LolWatcher
+import cassiopeia as cass
 import pandas as pd
 import json
 import pprint
 # Fetches ranked stats (and more) from riotAPI using riotwatcher/LoLWatcher
+# (and perhaps adding Cassiopeia functionality in the future)
+
 # Riot-Watcher: https://github.com/pseudonym117/Riot-Watcher 
+# Cassiopeia: https://github.com/meraki-analytics/cassiopeia
 
 # API Key found in: https://developer.riotgames.com/
 
@@ -18,17 +22,17 @@ def main():
     watcher = LolWatcher(apiKey)
 
     while(running):
-        print("Hello! Pick one option: ")
-        print("Type '0' to find your ranked stats ")
-        print("Type '1' for champion data ")
-        print("Type '2' for champion mastery ")
-        print("Type '3' for last match details ")
-        print("Type '4' to end program.")
+        print("Pick an option: ")
+        print("Type '1' to find your ranked stats ")
+        print("Type '2' for champion data ")
+        print("Type '3' for champion mastery FlexScore ")
+        print("Type '4' for last match details ")
+        print("Type '5' to end program.")
 
 
         x = int((input("Enter your option here: ")))
 
-        if(x==0): # Print ranked stats
+        if(x==1): # Print ranked stats
             my_region = (str)(input("Type in your region (NA is 'na1'): "))
             username = (str)(input("Type in your username (no spaces): "))
 
@@ -38,7 +42,7 @@ def main():
             pp = pprint.PrettyPrinter(indent=4)
             pp.pprint(my_ranked_stats)
 
-        elif(x==1): # Print champion data
+        elif(x==2): # Print champion data
             my_region = (str)(input("Type in your region (NA is 'na1'): "))
 
 
@@ -49,7 +53,7 @@ def main():
             # Champion output not clean
             pp.pprint(output)
 
-        elif(x==2): # Print flexScore
+        elif(x==3): # Print flexScore
             my_region = (str)(input("Type in your region (NA is 'na1'): "))
             username = (str)(input("Type in your username (no spaces): "))
   
@@ -59,7 +63,7 @@ def main():
             pp.pprint(output)
 
 
-        elif(x==3): # Print last match details
+        elif(x==4): # Print last match details
             my_region = (str)(input("Type in your region (NA is 'na1'): "))
             username = (str)(input("Type in your username (no space): "))
             print("Last game info: ")
@@ -69,14 +73,17 @@ def main():
             pp = pprint.PrettyPrinter(indent=4)
             pp.pprint(match_detail)
 
-        elif(x==4): # End program
+        elif(x==5): # End program
             print("Thank you! Have a great day :)")
             running = False
             break;
 
-        #elif(x==-1): # TEST
-        #    pass
-
+        elif(x==0): # TEST
+            print("This is an Easter egg! Not too exciting, though...")
+            print("Enter another number.")
+        elif(x==-1): # TEST
+            pass
+        
         else:
             print("Error. entered invalid number. Please try again!")
 

@@ -17,9 +17,10 @@ tourney = []
 for x in tournaments: 
     tourney.append(x["overviewPage"])
 
-tourney.index("LCS/2020 Season/Summer Playoffs")
-games = lp.get_games(tourney[0])
-game = lp.get_game_details(games[0])
+tourneyIDX = tourney.index("LCS/2020 Season/Summer Playoffs")
+games = lp.get_games(tourney[tourneyIDX])
+game = lp.get_game_details(games[0]) 
+# games[0] respresents TSM vs GG game 1 of the 2020 LCS Summer Playoffs
 # Let's print out the stats of a game
 pp = pprint.PrettyPrinter(indent=4)
 pp.pprint(game)

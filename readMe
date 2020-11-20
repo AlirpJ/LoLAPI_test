@@ -1,7 +1,8 @@
 Joshua Prila
 RiotWatcher: https://github.com/pseudonym117/Riot-Watcher
+Leaguepedia Parser: https://github.com/mrtolkien/leaguepedia_parser
 
-Options:
+Options for test.py:
 0 - Print your ranked stats
 1 - Print champion data
 2 - Print analysis of a user's ability to flex champions

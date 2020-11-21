@@ -1,6 +1,6 @@
 import leaguepedia_parser as lp
 import pprint
-
+# Joshua Prila
 
 # Gets regions names
 regions = lp.get_regions()
@@ -17,10 +17,12 @@ tourney = []
 for x in tournaments: 
     tourney.append(x["overviewPage"])
 
-tourneyIDX = tourney.index("LCS/2020 Season/Summer Playoffs")
+tourneyIDX = tourney.index("LCS/2020 Season/Summer Playoffs") # TourneyIDX is idx of desired tournament
+# In this case, our desired tournament is "LCS/2020 Season/Summer Playoffs"
+
 games = lp.get_games(tourney[tourneyIDX])
 game = lp.get_game_details(games[0]) 
-# games[0] respresents TSM vs GG game 1 of the 2020 LCS Summer Playoffs
-# Let's print out the stats of a game
+# games[0] respresents TSM vs GG game 1 of the 2020 LCS Summer Playoffs (the first game played of the LCS Summer Playoffs)
+# Let's print out the stats of this game
 pp = pprint.PrettyPrinter(indent=4)
 pp.pprint(game)

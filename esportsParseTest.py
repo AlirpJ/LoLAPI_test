@@ -1,6 +1,7 @@
 import leaguepedia_parser as lp
 import pprint
 # Joshua Prila
+# Use this for learning purposes
 
 # Gets regions names
 regions = lp.get_regions()

@@ -27,3 +27,5 @@ game = lp.get_game_details(games[0])
 # Let's print out the stats of this game
 pp = pprint.PrettyPrinter(indent=4)
 pp.pprint(game)
+
+# Should be able to play with it from there. There are endless possibilities on using this data!
